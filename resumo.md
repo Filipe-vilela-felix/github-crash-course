@@ -88,6 +88,32 @@ Esses dois comandos juntos formam um commit. No entanto, eles são separados par
 
 - Para criá-lo, você pode usar o comando `touch .gitignore` na linha de comando do Git, ou criar diretamente no VS Code um arquivo chamado `.gitignore`.
 
-## Adicionando pastas ao .gitignore
+### Adicionando pastas ao .gitignore
 
 - Para adicionar qualquer pasta ao `.gitignore`, digite o nome da pasta desejada, seguido de uma barra `/` no final.
+
+## Branches + Merge + Conflicts
+
+### git branch <name>
+
+- Branches são contêineres que contêm commits. A criação de uma nova branch serve para trabalhar em recursos adicionais ou correções de bugs sem impactar imediatamente o código principal.
+
+- Para obter uma lista de todos os branches existentes e identificar qual está ativo, execute `git branch`.
+
+- O comando `git checkout <name>` permite navegar entre branches, assim como entre commits.
+
+- Ao escolher outra branch, o `git log` mostrará todos os commits dessa branch, que inicialmente são os mesmos da branch principal.
+
+- Para excluir um branch criado, use `git branch -D <name>`.
+
+- O comando `git checkout -b <name>` é uma maneira alternativa de criar uma branch e fazer checkout automaticamente.
+
+### git merge <name>
+
+- Se houver necessidade de enviar um commit de uma branch para outra, utilize `git merge <name>`.
+
+- O comando mescla o commit mais recente e todos os outros commits até aquele ponto de outra branch.
+
+- O Git tentará confirmar as alterações automaticamente, de forma que nada seja substituído.
+
+- Se houver alterações conflitantes no código, pode ser necessário resolver esses problemas manualmente.
