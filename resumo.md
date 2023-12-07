@@ -45,3 +45,37 @@ Esses dois comandos juntos formam um commit. No entanto, eles são separados par
 - Para obter uma lista de todos os commits criados até então, bem como seus respectivos IDs, você pode usar o comando `git log`. Após a execução do `git log`, é possível notar que ele informa qual branch você está usando.
 
 **Observação:** O ponteiro `HEAD` indica qual estado está carregado no momento. Você também pode começar a se mover entre os commits usando o comando `git checkout <ID>`.
+
+### git checkout <ID>
+
+- Este comando permite que você passe temporariamente para outro commit. Após a execução deste comando, várias informações serão exibidas.
+
+- Ao digitar `git log` após o checkout, você notará que apenas o initial commit aparece.
+- O ponteiro `HEAD` agora aponta exclusivamente para aquele commit, e a parte principal de antes não está mais visível.
+- Isso acontece porque com o `git checkout`, esse commit é carregado para fora da branch em que estava.
+
+- Se você quiser voltar para a branch que inclui todos os commits, digite `git checkout master` ou `git checkout main`, dependendo do nome da sua branch principal.
+
+## Desfazendo Commits
+
+### git revert <ID>
+
+- O comando `git revert <ID>` é usado para reverter as alterações de um commit específico, criando um novo commit.
+
+- Ele não reverte todas as alterações desde aquele commit, mas apenas as alterações específicas definidas naquele commit.
+
+- Este comando não deleta o commit que você deseja reverter. Em vez disso, ele adiciona um novo commit que desfaz as mudanças daquele commit anterior.
+
+- Após a execução, você notará mudanças no código, como a remoção de um parágrafo com link, indicando que um novo commit foi adicionado.
+
+- Geralmente, `git revert` é a opção preferida porque mantém o histórico de commits organizado e limpo.
+
+### git reset --hard <ID>
+
+- O comando `git reset --hard <ID>` é usado quando você deseja deletar um commit de forma permanente.
+
+- A diferença em relação ao `git revert` é que este ID indica o ponto para o qual você deseja voltar, excluindo todos os commits posteriores a esse ID.
+
+- Tenha cuidado com este comando, pois as alterações feitas após o commit especificado não podem ser recuperadas.
+
+- A ideia por trás do Git é preservar todas as alterações e estados, permitindo que você continue adicionando novas alterações sem perder o histórico.
