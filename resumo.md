@@ -79,3 +79,15 @@ Esses dois comandos juntos formam um commit. No entanto, eles são separados par
 - Tenha cuidado com este comando, pois as alterações feitas após o commit especificado não podem ser recuperadas.
 
 - A ideia por trás do Git é preservar todas as alterações e estados, permitindo que você continue adicionando novas alterações sem perder o histórico.
+
+## Arquivo .gitignore
+
+- O arquivo `.gitignore` é utilizado quando você tem vários arquivos que deseja adicionar a um novo commit, mas existem alguns que não devem ser incluídos. Este arquivo permite que você especifique nomes de pastas e arquivos que sempre devem ser ignorados ao executar `git add`.
+
+### Criando o arquivo .gitignore
+
+- Para criá-lo, você pode usar o comando `touch .gitignore` na linha de comando do Git, ou criar diretamente no VS Code um arquivo chamado `.gitignore`.
+
+## Adicionando pastas ao .gitignore
+
+- Para adicionar qualquer pasta ao `.gitignore`, digite o nome da pasta desejada, seguido de uma barra `/` no final.
